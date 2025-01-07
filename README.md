@@ -69,6 +69,7 @@ The `config.json` file contains all the necessary information for DNF to run wit
     - `"BDF_MAG_R_CORRECTED"`
     - `"BDF_MAG_I_CORRECTED"`
     - `"BDF_MAG_Z_CORRECTED"`
+      
   You should modify these names to match those in your data.
 
   - **"filters_err"**: These are the error values corresponding to your data. You should modify these names to match those in your data.
