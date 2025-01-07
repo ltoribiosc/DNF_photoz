@@ -38,17 +38,19 @@ python3 photoz.py data/train.fits data/valid.fits
 ```
 PREGUNTAR A JUAN ESTO PORQUE HA CAMBIADO
 
+You have just run DNF. Congratulations on a successful run!
+
+If everything has gone well, you should now have a new file named `results.fits`. This file contains all the galaxy information from the valid file, enriched with the new data provided by DNF.
+
+If you encounter any errors or issues, please don't hesitate to contact us at laura.toribio@ciemat.es.
+
 In this command:
   - `data/train.fits` is the training data file, which contains the photometric information and spectroscopic redshift data for a sample of galaxies.
   - `data/valid.fits` is the validation data file, which contains the galaxies for which you want to calculate the photo-zs.
 
 You will need to modify these paths when using your own data.
 
-You have just run DNF. Congratulations on a successful run!
 
-If everything has gone well, you should now have a new file named `results.fits`. This file contains all the galaxy information from the valid file, enriched with the new data provided by DNF.
-
-If you encounter any errors or issues, please don't hesitate to contact us at laura.toribio@ciemat.es.
 
 ## Running DNF with Your Own Data
 If you're interested in running DNF with your own data (that's probably why you're here.), follow these steps:
