@@ -74,7 +74,7 @@ The `config.json` file contains all the necessary information for DNF to run wit
 
   - **"filters_err"**: These are the error values corresponding to your data. You should modify these names to match those in your data.
 
-  - **"bins"**: Contains the information for calculating the DNF, including the start, end, and number of bins. Unless you need to change this for a specific reason, you can leave the default configuration.
+  - **"bins"**: Contains the information for calculating the PDFs, including the start, end, and number of bins. Unless you need to change this for a specific reason, you can leave the default configuration.
 
   - **"fit"**: Choose `True` or `False` depending on whether you want *** (please clarify what *** refers to).
 
