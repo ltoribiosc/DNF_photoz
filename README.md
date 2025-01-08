@@ -1,6 +1,6 @@
 # DNF: Directional Neighbourhood Fitting
 
-DNF is a nearest-neighbor approach for photometric redshift estimation developed at the CIEMAT (Centro de Investigaciones Energéticas Medioambientales y Tecnológicas). DNF computes the photo-z hyperplane that best fits the directional neighbourhood of a photometric galaxy in the training sample. A detailed description of DNF is available [here](https://arxiv.org/abs/1511.07623).
+DNF is a nearest-neighbor approach for photometric redshift estimation developed at the CIEMAT (Centro de Investigaciones Energéticas, Medioambientales y Tecnológicas). DNF computes the photo-z hyperplane that best fits the directional neighbourhood of a photometric galaxy in the training sample. A detailed description of DNF is available [here](https://arxiv.org/abs/1511.07623).
 
 If you have any questions or suggestions, please don't hesitate to contact us at laura.toribio@ciemat.es and/or juan.vicente@ciemat.es.
 
@@ -59,7 +59,7 @@ If you are not famliar with GitHub:
   Visit the official [DNF GitHub space](https://github.com/ltoribiosc/DNF_photoz) to download the latest version:
   - `dnf.py`: This is the main code that calculates the photo-z. You don’t need to modify anything in this file.  
   - `photoz.py`: This code handles loading the configuration and reading the training data (`train.fits`) as well as the validation data or the data for which you want to calculate the photo-z (e.g., `valid.fits`). You don’t need to modify anything in this file. 
-  - `config.json`: This file contains the selected configuration. You will need to modify this file, but don’t worry, we’ll explain how to do it later.  
+  - `config.yaml` and/or `config.json`: This files contain the selected configuration. You must to choose what type of file do you prefer use (`config.yaml` or `config.json`). Both files have the same function. Choose the one that is easier for you to modify or that you are more familiar with and delete the other one. DNF uses `config.yaml` by default. You will need to modify this file, but don’t worry, we’ll explain how to do it later.  
 
 
 - **Download the Data Folder:**  
@@ -101,8 +101,8 @@ If you're interested in running DNF with your own data (that's probably why you'
 
 In the example, these files were named `train.fits` and `valid.fits`, but you can use whatever names you prefer. We recommend that you save your input files in the `data` folder, but this is not mandatory. You can create your own directory, just remember to include the correct path when running DNF.
 
-**2. Modify the config.json file if is necessary:**
-The `config.json` file contains all the necessary information for DNF to run with the required customization for each type of data and analysis. In the example, `config.json` was configured for the data in `train.fits`, but now we will explain everything it contains so you can learn how to modify it.
+**2. Modify the config.yaml or config.json file if is necessary:**
+The `config.yaml` and `config.json` files contain all the necessary information for DNF to run with the required customization for each type of data and analysis. In the example, the `config` file was configured for the data in `train.fits`, but now we will explain everything it contains so you can learn how to modify it.
 
   - **"filters"**: Contains the names of the filters used by DNF to calculate the photo-zs, which are available in the `train.fits` file. In the example, we have four filters named:
     - `"MAG_G"`
