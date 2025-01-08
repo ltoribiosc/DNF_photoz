@@ -4,6 +4,32 @@ DNF is a nearest-neighbor approach for photometric redshift estimation. DNF is a
 
 If you have any questions or suggestions, please don't hesitate to contact us at laura.toribio@ciemat.es and/or juan.vicente@ciemat.es.
 
+### Citing This Work
+
+If you use this code in your research, we kindly ask you to cite the following article:  
+
+De Vicente, J., Sánchez, E., Sevilla-Noarbe, I., 2016, Directional Neighbourhood Fitting (DNF): photometric redshifts using nearest neighbours, MNRAS, 459, 3078.  
+[DOI: 10.1093/mnras/stw824](https://doi.org/10.1093/mnras/stw824)  
+[arXiv:1511.07623](https://arxiv.org/abs/1511.07623)  
+
+Here is the BibTeX entry for your convenience:  
+
+```bibtex
+@article{DeVicente2016,
+    author = {De Vicente, J. and Sánchez, E. and Sevilla-Noarbe, I.},
+    title = {Directional Neighbourhood Fitting (DNF): photometric redshifts using nearest neighbours},
+    journal = {Monthly Notices of the Royal Astronomical Society},
+    volume = {459},
+    issue = {3},
+    pages = {3078-3091},
+    year = {2016},
+    doi = {10.1093/mnras/stw824},
+    eprint = {1511.07623},
+    archivePrefix = {arXiv}
+}
+```
+
+
 # DNF User Manual
 ##  How to Get Started with DNF
 
