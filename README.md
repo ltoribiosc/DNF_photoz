@@ -1,6 +1,6 @@
 # DNF: Directional Neighbourhood Fitting
 
-DNF is a nearest-neighbor approach for photometric redshift estimation. DNF is an strategy that improves the kNN approaches. DNF computes the photo-z hyperplane that best fits the directional neighbourhood of a photometric galaxy in the training sample. A detailed description of DNF is available [here](https://arxiv.org/abs/1511.07623).
+DNF is a nearest-neighbor approach for photometric redshift estimation developed at the CIEMAT (Centro de Investigaciones Energéticas Medioambientales y Tecnológicas). DNF is an strategy that improves the kNN approaches. DNF computes the photo-z hyperplane that best fits the directional neighbourhood of a photometric galaxy in the training sample. A detailed description of DNF is available [here](https://arxiv.org/abs/1511.07623).
 
 If you have any questions or suggestions, please don't hesitate to contact us at laura.toribio@ciemat.es and/or juan.vicente@ciemat.es.
 
