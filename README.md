@@ -37,7 +37,7 @@ Here is the BibTeX entry for your convenience:
 You can name your directory as you prefer. For example, you can use the following command to create a directory called `photozDNF`:
 
 ```bash
-mkdir photozDNF
+mkdir DNF_photoz
 ```
 
 **2. Download DNF and the Data Folder:**
@@ -84,7 +84,7 @@ In this command:
   - `data/valid.fits` is the validation data file, which contains the galaxies for which you want to calculate the photo-zs.
   - `output_results.fits` is the results data file, which contins the galaxies of `data/valid.fits` files with the photo-zs and other parameters.
 
-You will need to modify these paths when using your own data. If you want to save the output files in a specific folder or to have the inputs data in other folder, you must also indicate this in the path. In this example, `train.fits` and `valid.fits` are in the `data folder` while `output_results.fits` will be save in the `photozDNF folder`. 
+You will need to modify these paths when using your own data. If you want to save the output files in a specific folder or to have the inputs data in other folder, you must also indicate this in the path. In this example, `train.fits` and `valid.fits` are in the `data folder` while `output_results.fits` will be save in the `DNF_photoz folder`. 
 
 ## Running DNF with Your Own Data
 If you're interested in running DNF with your own data (that's probably why you're here.), follow these steps:
