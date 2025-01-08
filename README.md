@@ -12,7 +12,7 @@ De Vicente, J., Sánchez, E., Sevilla-Noarbe, I., 2016, Directional Neighbourho
 [DOI: 10.1093/mnras/stw824](https://doi.org/10.1093/mnras/stw824)  
 [arXiv:1511.07623](https://arxiv.org/abs/1511.07623)  
 
-Here is the BibTeX entry for your convenience:  
+Here is the BibTeX entry:  
 
 ```bibtex
 @article{DeVicente2016,
