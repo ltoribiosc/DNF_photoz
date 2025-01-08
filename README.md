@@ -39,14 +39,7 @@ archivePrefix = {arXiv},
 # DNF User Manual
 ##  How to Get Started with DNF
 
-**1. Create a New Directory:** 
-You can name your directory as you prefer. For example, you can use the following command to create a directory called `DNF_photoz`:
-
-```bash
-mkdir DNF_photoz
-```
-
-**2. Download DNF and the Data Folder:**
+**1. Download DNF and the Data Folder:**
 - **Clone directly the repository:**
 
 If you are familiar with using GitHub, you can clone the repository where you will find everything you need. Type git `clone` and paste the URL:
@@ -55,6 +48,13 @@ If you are familiar with using GitHub, you can clone the repository where you wi
 git clone https://github.com/ltoribiosc/DNF_photoz.git
 ```
 If you are not famliar with GitHub:
+
+- **Create a New Directory:** 
+You can name your directory as you prefer. For example, you can use the following command to create a directory called `DNF_photoz`:
+
+```bash
+mkdir DNF_photoz
+```
 - **Download the DNF, Photoz and config codes:**  
   Visit the official [DNF GitHub space](https://github.com/ltoribiosc/DNF_photoz) to download the latest version:
   - `dnf.py`: This is the main code that calculates the photo-z. You don’t need to modify anything in this file.  
@@ -71,7 +71,7 @@ If you are not famliar with GitHub:
 
 You are now ready to begin using DNF with the provided data!
 
-**3. Run DNF with Sample Data:**
+**2. Run DNF with Sample Data:**
 To run our example, you need to execute the following command:
 
 ```bash
