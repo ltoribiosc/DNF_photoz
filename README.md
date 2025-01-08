@@ -21,9 +21,9 @@ Here is the BibTeX entry:
     journal = {Monthly Notices of the Royal Astronomical Society},
     volume = {459},
     issue = {3},
-    pages = {3078-3091},
+    pages = {3078-3088},
     year = {2016},
-    doi = {10.1093/mnras/stw824},
+    doi = {10.1093/mnras/stw857},
     eprint = {1511.07623},
     archivePrefix = {arXiv}
 }
