@@ -1,0 +1,23 @@
+{
+    "filters": [
+        "MAG_G",
+        "MAG_R",
+        "MAG_I",
+        "MAG_Z"
+    ],
+    "filters_err": [
+        "MAG_ERR_G",
+        "MAG_ERR_R",
+        "MAG_ERR_I",
+        "MAG_ERR_Z"
+    ],
+    "bins": {
+        "start": 0.0,
+        "stop": 3.2,
+        "nbins": 100
+    },
+    "fit": true,
+    "pdf": true,
+    "metric": "ANF",
+    "zspec": "Z"
+}
