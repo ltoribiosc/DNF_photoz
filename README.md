@@ -1,6 +1,6 @@
 # DNF: Directional Neighbourhood Fitting
 
-DNF is a nearest-neighbor approach for photometric redshift estimation developed at the CIEMAT (Centro de Investigaciones Energéticas Medioambientales y Tecnológicas). DNF is an strategy that improves the kNN approaches. DNF computes the photo-z hyperplane that best fits the directional neighbourhood of a photometric galaxy in the training sample. A detailed description of DNF is available [here](https://arxiv.org/abs/1511.07623).
+DNF is a nearest-neighbor approach for photometric redshift estimation developed at the CIEMAT (Centro de Investigaciones Energéticas Medioambientales y Tecnológicas). DNF computes the photo-z hyperplane that best fits the directional neighbourhood of a photometric galaxy in the training sample. A detailed description of DNF is available [here](https://arxiv.org/abs/1511.07623).
 
 If you have any questions or suggestions, please don't hesitate to contact us at laura.toribio@ciemat.es and/or juan.vicente@ciemat.es.
 
@@ -9,24 +9,30 @@ If you have any questions or suggestions, please don't hesitate to contact us at
 If you use this code in your research, we kindly ask you to cite the following article:  
 
 De Vicente, J., Sánchez, E., Sevilla-Noarbe, I., 2016, Directional Neighbourhood Fitting (DNF): photometric redshifts using nearest neighbours, MNRAS, 459, 3078.  
-[DOI: 10.1093/mnras/stw824](https://doi.org/10.1093/mnras/stw824)  
+[DOI: 10.1093/mnras/stw824](https://doi.org/10.1093/mnras/stw857)  
 [arXiv:1511.07623](https://arxiv.org/abs/1511.07623)  
 
 Here is the BibTeX entry:  
 
 ```bibtex
-@article{DeVicente2016,
-    author = {De Vicente, J. and Sánchez, E. and Sevilla-Noarbe, I.},
-    title = {Directional Neighbourhood Fitting (DNF): photometric redshifts using nearest neighbours},
-    journal = {Monthly Notices of the Royal Astronomical Society},
-    volume = {459},
-    issue = {3},
-    pages = {3078-3088},
-    year = {2016},
-    doi = {10.1093/mnras/stw857},
-    eprint = {1511.07623},
-    archivePrefix = {arXiv}
+@ARTICLE{2016MNRAS.459.3078D,
+       author = {{De Vicente}, J. and {S{\'a}nchez}, E. and {Sevilla-Noarbe}, I.},
+        title = "{DNF - Galaxy photometric redshift by Directional Neighbourhood Fitting}",
+      journal = {\mnras},
+     keywords = {methods: data analysis, surveys, galaxies: distances and redshifts, galaxies: statistics, large-scale structure of Universe, Astrophysics - Cosmology and Nongalactic Astrophysics},
+         year = 2016,
+        month = jul,
+       volume = {459},
+       number = {3},
+        pages = {3078-3088},
+          doi = {10.1093/mnras/stw857},
+archivePrefix = {arXiv},
+       eprint = {1511.07623},
+ primaryClass = {astro-ph.CO},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2016MNRAS.459.3078D},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
+
 ```
 
 
@@ -34,7 +40,7 @@ Here is the BibTeX entry:
 ##  How to Get Started with DNF
 
 **1. Create a New Directory:** 
-You can name your directory as you prefer. For example, you can use the following command to create a directory called `photozDNF`:
+You can name your directory as you prefer. For example, you can use the following command to create a directory called `DNF_photoz`:
 
 ```bash
 mkdir DNF_photoz
@@ -79,12 +85,12 @@ If everything has gone well, you should now have a new file named `output_result
 
 If you encounter any errors or issues, please don't hesitate to contact us at laura.toribio@ciemat.es and/or juan.vicente@ciemat.es.
 
-In this command:
+In this command line:
   - `data/train.fits` is the training data file, which contains the photometric information and spectroscopic redshift data for a sample of galaxies.
   - `data/valid.fits` is the validation data file, which contains the galaxies for which you want to calculate the photo-zs.
   - `output_results.fits` is the results data file, which contins the galaxies of `data/valid.fits` files with the photo-zs and other parameters.
 
-You will need to modify these paths when using your own data. If you want to save the output files in a specific folder or to have the inputs data in other folder, you must also indicate this in the path. In this example, `train.fits` and `valid.fits` are in the `data folder` while `output_results.fits` will be save in the `DNF_photoz folder`. 
+You will need to modify these paths when using your own data. If you want to save the output files in a specific folder or to have the inputs data in other folder, you must also indicate this in the path. In this example, `train.fits` and `valid.fits` are in the `data folder` while `output_results.fits` will be save in the repository you are working on.
 
 ## Running DNF with Your Own Data
 If you're interested in running DNF with your own data (that's probably why you're here.), follow these steps:
