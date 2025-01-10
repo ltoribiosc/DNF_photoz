@@ -410,7 +410,7 @@ class dnfEstimator:
 
         # Compute the error based in the fit and the parameters
         Verrnorm = np.linalg.norm(Verr, axis=1)
-        photozerr_fit = 1.758 *np.sqrt(np.sum(zerrmatrix * wmatrix, axis=1))
+        photozerr_fit = np.sqrt(np.sum(zerrmatrix * wmatrix, axis=1))
         photozerr_param = np.abs(0.2 * Verrnorm * (1.0 + photoz))
          
         # Combine errors to calculate the total redshift error
