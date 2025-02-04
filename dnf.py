@@ -514,59 +514,44 @@ class dnfEstimator:
         return photoz, photozerr, photozerr_param, photozerr_fit, nneighbors, C       
                   
     def compute_pdfs(self, zpdf, wpdf):
-       """
-       Compute the pdfs from neighbor redshifts and weights. 
-       """
-       
-       Nvalid=zpdf.shape[0]
-
-       # Initialize PDF-related variables if required
-       if self.pdf:
-            Vpdf = np.zeros((Nvalid, len(self.zgrid)), dtype='double')
-       else:
-            Vpdf = 0
-
-       bin_indices = np.digitize(zpdf,self.zgrid)  # Indices de los bins para cada elemento de zpdf (l x m)
-       
-       # Mask matrix for each bin (l x m x len(bins)) 
-       masks = (bin_indices[..., np.newaxis] == np.arange(len(self.zgrid))) 
-           
-       # mask per weights and sum by columns
-       histograms = np.einsum('ij,ijk->ik', wpdf, masks)
-       Vpdf=histograms
-
-       return Vpdf
-    
-
-       
-    def calculate_pdf_vectorized(self, zpdf, wpdf):
         """
-        Compute the probability density function from zpdf and wpdf 
+        Compute the PDFs using only the first 5 neighboring galaxies.
+
+        Parameters:
+        - zpdf: (Nvalid, Nneighbors) array with redshift values of neighbors.
+        - wpdf: (Nvalid, Nneighbors) array with corresponding weights.
+        - pdf: bool, if True, compute PDFs.
+        - Nvalid: int, number of galaxies.
+        - zgrid: (Nz,) array, redshift grid.
+
+        Returns:
+        - Vpdf: (Nvalid, Nz) array with probability distributions using only the first 5 neighbors.
         """
-        # Validacion de entrada
-        if zpdf.shape != wpdf.shape:
-            raise ValueError("zpdf y wpdf should have the same dimensions.")
-        
-        # Normalization constant
-        normalizer = 1 / np.sqrt(2 * np.pi)
-        
-        # Expand dimensions for computing differences with broadcasting
-        # x_grid has the shape (1, 1, nbins) for operating with A in vectorized way
-        diffs = self.zgrid[None, None, :] - zpdf[:, :, None]
 
-        # Compute gaussians over zgrid: exp(-0.5 * diffs^2) with normalization
-        gaussians = normalizer * np.exp(-0.5 * diffs**2)
-        
-        # Adding weights self.wpdf expanding to operate with gaussians
-        # B[:, :, None] has shape (m, n, 1) for multiplying with gaussians
-        weighted_gaussians = gaussians * wpdf[:, :, None]
-        
-        # Sum the contributions of each point in each file
-        Vpdf = np.sum(weighted_gaussians, axis=1)
+        Nvalid=zpdf.shape[0]
+        Nz = len(self.zgrid)
+        Vpdf = np.zeros((Nvalid, Nz), dtype='double')
 
+        # Select only the first 5 neighbors
+        zpdf_top5 = zpdf[:, :5]
+        wpdf_top5 = wpdf[:, :5]
+
+        # Expand dimensions for efficient computation
+        zpdf_exp = zpdf_top5[:, :, np.newaxis]  # (Nvalid, 5, 1)
+        zgrid_exp = self.zgrid[np.newaxis, np.newaxis, :]  # (1, 1, Nz)
+
+        # Compute Gaussian weights
+        weights = np.exp(-((zpdf_exp - zgrid_exp) ** 2) / (2 * (0.05 ** 2)))  # Gaussian with sigma=0.05
+        weights *= wpdf_top5[:, :, np.newaxis]  # Apply original weights
+
+        # Sum weights over the 5 selected neighbors
+        Vpdf = weights.sum(axis=1)
+
+        # Normalize PDFs
+        Vpdf /= Vpdf.sum(axis=1, keepdims=True) + 1e-12  # Avoid division by zero
+ 
         return Vpdf
-
-
+    
 
 
         
