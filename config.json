@@ -13,7 +13,7 @@
     ],
     "bins": {
         "start": 0.0,
-        "stop": 3.2,
+        "stop": 2.0,
         "nbins": 100
     },
     "fit": true,
