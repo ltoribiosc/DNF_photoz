@@ -12,7 +12,7 @@ __version__ = "5.0"
 __email__= "juan.vicente@ciemat.es"
 
 """
-DNF 5.0 (2024)
+DNF 5.0 (2025)
 Authors: Juan de Vicente, Laura Toribio
 Update: class implementation
 contains three alternative functions to compute the photometric redshift of a sample of galaxies:
@@ -312,11 +312,19 @@ class dnfEstimator:
         elif self.metric == 'DNF': 
             NEIGHBORS['distance'] = self.compute_directional_distance(V, Ts, Tsnorm)
 
-        # Sort the top Nneighbors
-        NEIGHBORS = np.sort(NEIGHBORS, order='distance', axis=1)
-       
-        # Select redshift of closer neighbors until n numbers of neighbors
-        NEIGHBORS=NEIGHBORS[:,:self.Nneighbors]
+        # Get the indices of the k nearest neighbors
+        partial_indices = np.argpartition(NEIGHBORS['distance'], self.Nneighbors, axis=1)[:, :self.Nneighbors]
+
+        # Use those indexes to select neighbors
+        row_indices = np.arange(NEIGHBORS.shape[0])[:, None]
+        top_k_neighbors = NEIGHBORS[row_indices, partial_indices]
+
+        # Sort only those k neighbors (so they are sorted by distance)
+        sorted_order = np.argsort(top_k_neighbors['distance'], axis=1)
+        top_k_neighbors = np.take_along_axis(top_k_neighbors, sorted_order, axis=1)
+
+        # top_k_neighbors is equivalent to NEIGHBORS[:,:self.Nneighbors] sorted
+        NEIGHBORS = top_k_neighbors
         
         return NEIGHBORS 
 
@@ -426,7 +434,8 @@ class dnfEstimator:
 
         if self.pdf:
             Vpdf=self.compute_pdfs(zpdf, wpdf)
-
+        else:
+            Vpdf=0
         return photoz, photozerr, photozerr_param, photozerr_fit, z1, d1, id1, nneighbors, Vpdf,  NEIGHBORS
 
  
