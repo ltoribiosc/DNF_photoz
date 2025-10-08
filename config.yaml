@@ -17,8 +17,6 @@ bins:
   stop: 2.0
   nbins: 100
 
-fit: false
+fit: true
 pdf: true
 metric: ANF
-
-
