@@ -32,3 +32,6 @@ py-modules = ["dnf"]
 
 [tool.hatch.build]
 # Build defaults (wheel + sdist)
+
+[tool.hatch.build.targets.wheel]
+include = ["dnf.py"]
